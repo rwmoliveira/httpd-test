@@ -1,0 +1,17 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: httpd-test
+  namespace: workshop-html
+  labels:
+    app: httpd-test
+spec:
+  host: httpd-test-workshop-html.apps.ocp.aopatricio.com.br
+  to:
+    kind: Service
+    name: httpd-test
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
+status: {}
