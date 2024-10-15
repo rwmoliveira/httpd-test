@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: httpd-test
+  name: httpd-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: httpd-test
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: httpd-test
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/workshop-html/httpd-test
+        name: httpd-test
+        resources: {}
+status: {}
